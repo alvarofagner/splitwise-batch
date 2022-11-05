@@ -1,0 +1,36 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.bracketPairColorization.enabled": true,
+
+    // https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+    "go.useLanguageServer": true,
+    "go.buildTags": "aar,clib,mage",
+    "[go]": {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none"
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        // Add parameter placeholders when completing a function.
+        "ui.completion.usePlaceholders": true,
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "ui.diagnostic.staticcheck": false,
+        // Enforce a stricter format than gofmt, while being backwards compatible.
+        "formatting.gofumpt": true,
+    },
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+}
